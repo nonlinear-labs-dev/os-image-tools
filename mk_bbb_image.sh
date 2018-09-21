@@ -140,7 +140,7 @@ function download {
 
 	for f in MLO u-boot.img nonlinear-labs-2D.dtb nonlinear-bbb-image-default-beaglebone.tar.xz; do
 		printf "  %s..." ${f}
-		curl -o "/tmp/bbb/${f}" --fail "${DOWNLOAD_LOCATION}/${OPT_RELEASE_NUMBER}/${f}" 2>/dev/null 1>/dev/null && printf "OK\n" || (printf "ERR: -%i\n" $?; exit -1)
+		curl -o "/tmp/bbb/${f}" --fail --progress-bar "${DOWNLOAD_LOCATION}/${OPT_RELEASE_NUMBER}/${f}" 2>/dev/null 1>/dev/null && printf "OK\n" || (printf "ERR: -%i\n" $?; exit -1)
 	done
 	printf "\n"
 }
@@ -152,7 +152,7 @@ function usage {
 	printf "  -p|--partition           Recreate partitions\n"
 	printf "  -r|--root                Update files on root partition\n"
 	printf "  -b|--boot                Update files on boot partition\n"
-	printf "  -n|--release-number <nr> Specify release number <nr> (e.g. devel-11)\n"
+	printf "  -n|--release-number <nr> Specify release number <nr> (e.g. 11)\n"
 	printf "  -v|--verbose             Be more verbose (even more if used twice)\n"
 	printf "\n"
 	exit -1

@@ -82,8 +82,8 @@ sudo true
 
 download
 
-printf "Dumping image on ${DEVICE}..."
-dd if=${DOWNLOAD_DIR}/${DOWNLOAD_FILE} | pv | sudo dd of=${DEVICE} bs=512k oflag=dsync && sync
+printf "Dumping image on ${DEVICE}...\n"
+pv ${DOWNLOAD_DIR}/${DOWNLOAD_FILE} | sudo dd of=${DEVICE} bs=512k oflag=dsync 1>/dev/zero 2>/dev/zero && sync
 printf "Done.\n"
 
 printf "Cleaning up..."

@@ -75,10 +75,10 @@ function sync_rootfs {
 		printf "\nCan not untar rootfs.tar. Aborting...\n"
 		exit -1
 	fi
-	if ! sudo cp "${DOWNLOAD_DIR}/nonlinear-labs-2D.dtb" "${MOUNT_POINT_ROOT}/boot/"; then
-		printf "\nCan not opy nonlinear-labs-2D.dtb. Aborting...\n"
-		exit -1
-	fi
+#	if ! sudo cp "${DOWNLOAD_DIR}/nonlinear-labs-2D.dtb" "${MOUNT_POINT_ROOT}/boot/"; then
+#		printf "\nCan not opy nonlinear-labs-2D.dtb. Aborting...\n"
+#		exit -1
+#	fi
 	sync
 }
 
@@ -138,9 +138,9 @@ function download {
 
 	printf "Downloading release %s from %s/%s:\n" ${OPT_RELEASE_NUMBER} ${DOWNLOAD_LOCATION} ${OPT_RELEASE_NUMBER}
 
-	for f in MLO u-boot.img nonlinear-labs-2D.dtb nonlinear-bbb-image-default-beaglebone.tar.xz; do
+	for f in nonlinear-bbb-image-default-beaglebone.tar.xz; do
 		printf "  %s..." ${f}
-		curl -o "/tmp/bbb/${f}" --fail --progress-bar "${DOWNLOAD_LOCATION}/${OPT_RELEASE_NUMBER}/${f}" 2>/dev/null 1>/dev/null && printf "OK\n" || (printf "ERR: -%i\n" $?; exit -1)
+		curl -o "${DOWNLOAD_DIR}/${f}" --fail --progress-bar "${DOWNLOAD_LOCATION}/${OPT_RELEASE_NUMBER}/${f}" && printf "OK\n" || (printf "ERR: -%i\n" $?; exit -1)
 	done
 	printf "\n"
 }
@@ -263,7 +263,8 @@ if [ ${OPT_COPY_ROOTFS} = true ]; then
 fi
 
 if [ ${OPT_COPY_BOOTFS} = true ]; then
-	sync_bootfs && write_uenv_file && sync
+	printf "Boot partition updates currently disabled. We might not even need this anymore...\n"
+#	sync_bootfs && write_uenv_file && sync
 fi
 
 printf "Cleaning up:\n"

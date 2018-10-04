@@ -32,11 +32,26 @@ printf "  SDK:     %s\n" ${SDK_DIR}
 printf "  NLAUDIO: %s\n" ${NLAUDIO_DIR}
 
 source ${SDK_DIR}/environment-setup-corei7-64-nonlinear-linux
-mkdir -p ${NLAUDIO_DIR}/../nlaudio_build_nuc
-cd ${NLAUDIO_DIR}/../nlaudio_build_nuc
 
-export CFLAGS=" -O0 -pipe -g -feliminate-unused-debug-types"
-export CXXFLAGS=" -O0 -pipe -g -feliminate-unused-debug-types"
-export LDFLAGS=" -Wl,-O0 -Wl,--hash-style=gnu -Wl,--as-needed"
+printf "Setting up Debug environment for remote target...\n"
+mkdir -p ${NLAUDIO_DIR}/../nlaudio_debug_build_nuc
+cd ${NLAUDIO_DIR}/../nlaudio_debug_build_nuc
+CMAKE_BUILD_TYPE="Debug" \
+CMAKE_C_FLAGS_DEBUG=" -O0 -pipe -g -feliminate-unused-debug-types" \
+CMAKE_CXX_FLAGS_DEBUG=" -O0 -pipe -g -feliminate-unused-debug-types" \
+CMAKE_LD_FLAGS_DEBUG=" -Wl,-O0 -Wl,--hash-style=gnu -Wl,--as-needed" \
+cmake ../nlaudio && VERBOSE=1 make -j8
 
-cmake ../nlaudio && VERSBOE=1 make -j8 && qtcreator ../nlaudio &
+printf "Setting up Release environment for remote target...\n"
+mkdir -p ${NLAUDIO_DIR}/../nlaudio_release_build_nuc
+cd ${NLAUDIO_DIR}/../nlaudio_release_build_nuc
+CMAKE_BUILD_TYPE="Release" \
+CMAKE_C_FLAGS_RELEASE=" -O2 -pipe -g -feliminate-unused-debug-types" \
+CMAKE_CXX_FLAGS_RELEASE=" -O2 -pipe -g -feliminate-unused-debug-types" \
+CMAKE_LD_FLAGS_RELEASE=" -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed" \
+cmake ../nlaudio && VERBOSE=1 make -j8
+
+printf "\n\n"
+printf "Build configurations setup:\n"
+printf "  Debug:   ${NLAUDIO_DIR}/../nlaudio_debug_build_nuc\n"
+printf "  Release: ${NLAUDIO_DIR}/../nlaudio_release_build_nuc\n"

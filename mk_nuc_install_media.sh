@@ -3,7 +3,7 @@
 DOWNLOAD_LOCATION="http://home.nonlinear-labs.de/images/nuc"
 DOWNLOAD_DIR="/tmp/nuc"
 
-DOWNLOAD_FILE=nonlinear-image-default-nonlinear-intel-corei7-64.hddimg
+DOWNLOAD_FILE=nonlinear-nuc-image-default-nonlinear-intel-corei7-64.hddimg
 
 OPT_RELEASE_NUMBER=latest
 

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE QtCreatorSession>
+<!-- Written by QtCreator 4.7.1, 2018-10-04T15:57:44. -->
+<qtcreator>
+ <data>
+  <variable>CascadeSetActive</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>Color</variable>
+  <value type="QString">#666666</value>
+ </data>
+ <data>
+  <variable>EditorSettings</variable>
+  <value type="QByteArray">AAAAD0VkaXRvck1hbmFnZXJWNAAAAAIAAAC4AC8AbwBwAHQALwBuAG8AbgBsAGkAbgBlAGEAcgAtAG4AdQBjAC0AZABpAHMAdAByAG8ALwA2ADQALwBzAHkAcwByAG8AbwB0AHMALwBjAG8AcgBlAGkANwAtADYANAAtAG4AbwBuAGwAaQBuAGUAYQByAC0AbABpAG4AdQB4AC8AdQBzAHIALwBpAG4AYwBsAHUAZABlAC8AYwArACsALwA3AC4AMwAuADAALwB0AGgAcgBlAGEAZAAAAAwAAAAAGAAAAAEAAAFkAAAAAAAAAXgAAAAAAAAAAAAAAIwALwBoAG8AbQBlAC8AcABhAHMAbwAvAGQAZQB2AGUAbABvAHAAbQBlAG4AdAAvAG4AbwBuAGwAaQBuAGUAYQByAC8AbgBsAGEAdQBkAGkAbwAvAGUAeABhAG0AcABsAGUAcwAvAGMAMQA1AF8AYQB1AGQAaQBvAF8AZQBuAGcAaQBuAGUALgBjAHAAcAAAAAwAAAAAHAAAAAEAAAA6AAAAAAAAAFoAAAAIAAAAAQAAAAAAAAACAAAAjAAvAGgAbwBtAGUALwBwAGEAcwBvAC8AZABlAHYAZQBsAG8AcABtAGUAbgB0AC8AbgBvAG4AbABpAG4AZQBhAHIALwBuAGwAYQB1AGQAaQBvAC8AZQB4AGEAbQBwAGwAZQBzAC8AYwAxADUAXwBhAHUAZABpAG8AXwBlAG4AZwBpAG4AZQAuAGMAcABwAAAAKABjADEANQBfAGEAdQBkAGkAbwBfAGUAbgBnAGkAbgBlAC4AYwBwAHAAAAATQ3BwRWRpdG9yLkMrK0VkaXRvcgAAALgALwBvAHAAdAAvAG4AbwBuAGwAaQBuAGUAYQByAC0AbgB1AGMALQBkAGkAcwB0AHIAbwAvADYANAAvAHMAeQBzAHIAbwBvAHQAcwAvAGMAbwByAGUAaQA3AC0ANgA0AC0AbgBvAG4AbABpAG4AZQBhAHIALQBsAGkAbgB1AHgALwB1AHMAcgAvAGkAbgBjAGwAdQBkAGUALwBjACsAKwAvADcALgAzAC4AMAAvAHQAaAByAGUAYQBkAAAADAB0AGgAcgBlAGEAZAAAABNDcHBFZGl0b3IuQysrRWRpdG9yAAABEwAAAA1jdXJyZW50ZWRpdG9yAAAAuAAvAG8AcAB0AC8AbgBvAG4AbABpAG4AZQBhAHIALQBuAHUAYwAtAGQAaQBzAHQAcgBvAC8ANgA0AC8AcwB5AHMAcgBvAG8AdABzAC8AYwBvAHIAZQBpADcALQA2ADQALQBuAG8AbgBsAGkAbgBlAGEAcgAtAGwAaQBuAHUAeAAvAHUAcwByAC8AaQBuAGMAbAB1AGQAZQAvAGMAKwArAC8ANwAuADMALgAwAC8AdABoAHIAZQBhAGQAAAAmAEMAcABwAEUAZABpAHQAbwByAC4AQwArACsARQBkAGkAdABvAHIAAAAYAAAAAQAAAWQAAAAAAAABeAAAAAAAAAAAAAAAAA==</value>
+ </data>
+ <data>
+  <variable>ProjectDependencies</variable>
+  <valuemap type="QVariantMap"/>
+ </data>
+ <data>
+  <variable>ProjectList</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">/home/paso/development/nonlinear/nlaudio/CMakeLists.txt</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>StartupProject</variable>
+  <value type="QString">/home/paso/development/nonlinear/nlaudio/CMakeLists.txt</value>
+ </data>
+ <data>
+  <variable>value-ActiveMode</variable>
+  <value type="QString">Edit</value>
+ </data>
+ <data>
+  <variable>value-Breakpoints</variable>
+  <valuelist type="QVariantList">
+   <valuemap type="QVariantMap">
+    <value type="QString" key="filename">/home/paso/development/nonlinear/nlaudio/examples/c15_audio_engine.cpp</value>
+    <value type="int" key="linenumber">91</value>
+   </valuemap>
+  </valuelist>
+ </data>
+ <data>
+  <variable>value-DebuggerSeparateWidgetGeometry</variable>
+  <value type="QRect">400x400+0+0</value>
+ </data>
+ <data>
+  <variable>value-DefaultFormats</variable>
+  <valuemap type="QVariantMap"/>
+ </data>
+ <data>
+  <variable>value-IndividualFormats</variable>
+  <valuemap type="QVariantMap"/>
+ </data>
+ <data>
+  <variable>value-ProjectTree.ExpandData</variable>
+  <valuelist type="QVariantList">
+   <valuelist type="QVariantList">
+    <value type="QString">/home/paso/development/nonlinear/nlaudio/examples</value>
+    <value type="QString">examples</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/home/paso/development/nonlinear/nlaudio</value>
+    <value type="QString">nlaudio [master]</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/home/paso/development/nonlinear/nlaudio/examples</value>
+    <value type="QString">c15_audio_engine</value>
+   </valuelist>
+  </valuelist>
+ </data>
+ <data>
+  <variable>value-TaskWindow.Categories</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">Task.Category.QmlAnalysis</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>value-TaskWindow.IncludeWarnings</variable>
+  <value type="bool">true</value>
+ </data>
+ <data>
+  <variable>value-Watchers</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>valueKeys</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">ActiveMode</value>
+   <value type="QString">Breakpoints</value>
+   <value type="QString">DebuggerSeparateWidgetGeometry</value>
+   <value type="QString">DefaultFormats</value>
+   <value type="QString">IndividualFormats</value>
+   <value type="QString">ProjectTree.ExpandData</value>
+   <value type="QString">TaskWindow.Categories</value>
+   <value type="QString">TaskWindow.IncludeWarnings</value>
+   <value type="QString">Watchers</value>
+  </valuelist>
+ </data>
+</qtcreator>

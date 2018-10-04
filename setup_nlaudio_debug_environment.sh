@@ -75,11 +75,11 @@ sleep 1
 if ! [ -d ${QTC_SETTINGS_PATH}/qtcreator_settings ]; then
 	printf "Recreating qtcreator environment!\n"
 	printf "If you want to recreate it in the future, just delete:\n"
-	printf "  %s" "${QTC_SETTINGS_PATH}/qtcreator_settings"
+	printf "  %s\n" "${QTC_SETTINGS_PATH}/qtcreator_settings"
 	cp -R ${SCRIPTPATH}/qtcreator_settings ${QTC_SETTINGS_PATH}
 else
 	printf "Using qtcreator environment:\n"
-	printf "  %s" "${QTC_SETTINGS_PATH}/qtcreator_settings"
+	printf "  %s\n" "${QTC_SETTINGS_PATH}/qtcreator_settings"
 	printf "If you want to recreate it in the future, just delete above folder and rerun this script!\n"
 fi
 

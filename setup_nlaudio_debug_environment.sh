@@ -44,12 +44,13 @@ DEBUG_BUILD_DIR=${NLAUDIO_DIR}/../nlaudio_nuc/nlaudio_debug_build_nuc
 mkdir -p ${DEBUG_BUILD_DIR}
 cd ${DEBUG_BUILD_DIR}
 
-cmake ${NLAUDIO_DIR} \
+cmake \
 -DCMAKE_BUILD_TYPE="DEBUG" \
 -DCMAKE_C_FLAGS_DEBUG=" -O0 -pipe -g -feliminate-unused-debug-types" \
 -DCMAKE_CXX_FLAGS_DEBUG=" -O0 -pipe -g -feliminate-unused-debug-types" \
 -DCMAKE_LD_FLAGS_DEBUG=" -Wl,-O0 -Wl,--hash-style=gnu -Wl,--as-needed" \
-&& make -j8
+${NLAUDIO_DIR} \
+&& VERBOSE=1 make -j8
 
 # Release Config
 printf "Setting up Release environment for remote target...\n"
@@ -57,12 +58,13 @@ RELEASE_BUILD_DIR=${NLAUDIO_DIR}/../nlaudio_nuc/nlaudio_release_build_nuc
 mkdir -p ${RELEASE_BUILD_DIR}
 cd ${RELEASE_BUILD_DIR}
 
-cmake ${NLAUDIO_DIR} \
+cmake \
 -DCMAKE_BUILD_TYPE="RELEASE" \
 -DCMAKE_C_FLAGS_RELEASE=" -O2 -pipe -g -feliminate-unused-debug-types" \
 -DCMAKE_CXX_FLAGS_RELEASE=" -O2 -pipe -g -feliminate-unused-debug-types" \
 -DCMAKE_LD_FLAGS_RELEASE=" -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed" \
-&& make -j8
+${NLAUDIO_DIR} \
+&& VERBOSE=1 make -j8
 
 printf "\n\n"
 printf "Build configurations setup:\n"

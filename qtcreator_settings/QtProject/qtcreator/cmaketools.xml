@@ -1,20 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorCMakeTools>
-<!-- Written by QtCreator 4.7.1, 2018-10-05T10:59:13. -->
+<!-- Written by QtCreator 4.7.1, 2018-10-05T11:44:47. -->
 <qtcreator>
  <data>
   <variable>CMakeTools.0</variable>
-  <valuemap type="QVariantMap">
-   <value type="bool" key="AutoCreateBuildDirectory">false</value>
-   <value type="bool" key="AutoDetected">true</value>
-   <value type="bool" key="AutoRun">true</value>
-   <value type="QString" key="Binary">/usr/bin/cmake</value>
-   <value type="QString" key="DisplayName">System CMake at /usr/bin/cmake</value>
-   <value type="QString" key="Id">{f4dd3970-a58e-45e3-ac6d-7382fe9f42ff}</value>
-  </valuemap>
- </data>
- <data>
-  <variable>CMakeTools.1</variable>
   <valuemap type="QVariantMap">
    <value type="bool" key="AutoCreateBuildDirectory">false</value>
    <value type="bool" key="AutoDetected">false</value>
@@ -22,6 +11,17 @@
    <value type="QString" key="Binary">/opt/nonlinear-nuc-distro/64/sysroots/x86_64-nonlinearsdk-linux/usr/bin/cmake</value>
    <value type="QString" key="DisplayName">NUC</value>
    <value type="QString" key="Id">{dfb08389-afa7-4175-87d3-20f590146b2e}</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>CMakeTools.1</variable>
+  <valuemap type="QVariantMap">
+   <value type="bool" key="AutoCreateBuildDirectory">false</value>
+   <value type="bool" key="AutoDetected">true</value>
+   <value type="bool" key="AutoRun">false</value>
+   <value type="QString" key="Binary">/usr/bin/cmake</value>
+   <value type="QString" key="DisplayName">System CMake at /usr/bin/cmake</value>
+   <value type="QString" key="Id">{f4dd3970-a58e-45e3-ac6d-7382fe9f42ff}</value>
   </valuemap>
  </data>
  <data>

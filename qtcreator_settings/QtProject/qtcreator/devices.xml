@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorDevices>
-<!-- Written by QtCreator 4.7.1, 2018-10-04T15:57:44. -->
+<!-- Written by QtCreator 4.7.1, 2018-10-05T10:59:13. -->
 <qtcreator>
  <data>
   <variable>DeviceManager</variable>
   <valuemap type="QVariantMap">
    <valuemap type="QVariantMap" key="DefaultDevices">
+    <value type="QString" key="BareMetalOsType">{e419a458-0cb1-43f6-82f2-be64f494e7e5}</value>
     <value type="QString" key="Desktop">Desktop Device</value>
     <value type="QString" key="GenericLinuxOsType">{baac15d7-8588-4b5f-8d13-6ac606db9a57}</value>
    </valuemap>
@@ -31,13 +32,76 @@
      <value type="int" key="Version">0</value>
     </valuemap>
     <valuemap type="QVariantMap">
+     <value type="int" key="Authentication">1</value>
+     <value type="QString" key="DebugServerKey"></value>
+     <value type="QString" key="FreePortsSpec">10000-10100</value>
+     <value type="QString" key="GdbServerProviderId">BareMetal.GdbServerProvider.STLinkUtil:{cad1c4f3-ac6e-43ba-a069-12dd8c2159ac}</value>
+     <value type="QString" key="Host">localhost</value>
+     <value type="int" key="HostKeyChecking">0</value>
+     <value type="QString" key="InternalId">{e419a458-0cb1-43f6-82f2-be64f494e7e5}</value>
+     <value type="QString" key="KeyFile"></value>
+     <value type="QString" key="Name">STM32</value>
+     <value type="int" key="Origin">0</value>
+     <value type="QString" key="OsType">BareMetalOsType</value>
+     <value type="QString" key="Password"></value>
+     <value type="QString" key="QmlsceneKey"></value>
+     <value type="int" key="SshOptions">3</value>
+     <value type="int" key="SshPort">4242</value>
+     <value type="int" key="Timeout">0</value>
+     <value type="int" key="Type">0</value>
+     <value type="QString" key="Uname"></value>
+     <value type="int" key="Version">0</value>
+    </valuemap>
+    <valuemap type="QVariantMap">
+     <value type="int" key="Authentication">1</value>
+     <value type="QString" key="DebugServerKey"></value>
+     <value type="QString" key="FreePortsSpec">10000-10100</value>
+     <value type="QString" key="GdbServerProviderId">BareMetal.GdbServerProvider.OpenOcd:{f6ade83b-20fc-4dc0-9cbf-3b88534b153c}</value>
+     <value type="QString" key="Host">localhost</value>
+     <value type="int" key="HostKeyChecking">0</value>
+     <value type="QString" key="InternalId">{a8304e42-ae06-4786-b157-237369be10a7}</value>
+     <value type="QString" key="KeyFile"></value>
+     <value type="QString" key="Name">LPC4337_CM4</value>
+     <value type="int" key="Origin">0</value>
+     <value type="QString" key="OsType">BareMetalOsType</value>
+     <value type="QString" key="Password"></value>
+     <value type="QString" key="QmlsceneKey"></value>
+     <value type="int" key="SshOptions">3</value>
+     <value type="int" key="SshPort">3333</value>
+     <value type="int" key="Timeout">0</value>
+     <value type="int" key="Type">0</value>
+     <value type="QString" key="Uname"></value>
+     <value type="int" key="Version">0</value>
+    </valuemap>
+    <valuemap type="QVariantMap">
+     <value type="int" key="Authentication">1</value>
+     <value type="QString" key="DebugServerKey"></value>
+     <value type="QString" key="FreePortsSpec">10000-10100</value>
+     <value type="QString" key="GdbServerProviderId">BareMetal.GdbServerProvider.OpenOcd:{e7c66e2a-489f-4d5b-8183-b17b3d5e94b9}</value>
+     <value type="QString" key="Host">localhost</value>
+     <value type="int" key="HostKeyChecking">0</value>
+     <value type="QString" key="InternalId">{75352eaa-af3a-42c8-8b3e-cb016e2264b5}</value>
+     <value type="QString" key="KeyFile"></value>
+     <value type="QString" key="Name">LPC4337_CM0</value>
+     <value type="int" key="Origin">0</value>
+     <value type="QString" key="OsType">BareMetalOsType</value>
+     <value type="QString" key="Password"></value>
+     <value type="QString" key="QmlsceneKey"></value>
+     <value type="int" key="SshOptions">3</value>
+     <value type="int" key="SshPort">3334</value>
+     <value type="int" key="Timeout">0</value>
+     <value type="int" key="Type">0</value>
+     <value type="QString" key="Uname"></value>
+     <value type="int" key="Version">0</value>
+    </valuemap>
+    <valuemap type="QVariantMap">
      <value type="int" key="Authentication">3</value>
      <value type="QString" key="DebugServerKey"></value>
      <value type="QString" key="FreePortsSpec">10000-10100</value>
      <value type="QString" key="Host">192.168.23.1</value>
      <value type="int" key="HostKeyChecking">0</value>
      <value type="QString" key="InternalId">{baac15d7-8588-4b5f-8d13-6ac606db9a57}</value>
-     <value type="QString" key="KeyFile">/home/paso/.ssh/id_rsa</value>
+     <value type="QString" key="KeyFile">/home/paso/.ssh/qtc_id.pub</value>
      <value type="QString" key="Name">NUC</value>
      <value type="int" key="Origin">0</value>
      <value type="QString" key="OsType">GenericLinuxOsType</value>

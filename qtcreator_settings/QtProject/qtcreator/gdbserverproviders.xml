@@ -1,10 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorGdbServerProviders>
-<!-- Written by QtCreator 4.7.1, 2018-10-04T15:09:28. -->
+<!-- Written by QtCreator 4.7.1, 2018-10-05T10:59:13. -->
 <qtcreator>
  <data>
+  <variable>GdbServerProvider.0</variable>
+  <valuemap type="QVariantMap">
+   <value type="QString" key="BareMetal.GdbServerProvider.DisplayName">ST-LINK Utility</value>
+   <value type="QString" key="BareMetal.GdbServerProvider.Id">BareMetal.GdbServerProvider.STLinkUtil:{cad1c4f3-ac6e-43ba-a069-12dd8c2159ac}</value>
+   <value type="QString" key="BareMetal.GdbServerProvider.InitCommands">load
+</value>
+   <value type="int" key="BareMetal.GdbServerProvider.Mode">1</value>
+   <value type="QString" key="BareMetal.GdbServerProvider.ResetCommands"></value>
+   <value type="QString" key="BareMetal.StLinkUtilGdbServerProvider.ExecutableFile">/usr/bin/st-util</value>
+   <value type="bool" key="BareMetal.StLinkUtilGdbServerProvider.ExtendedMode">false</value>
+   <value type="QString" key="BareMetal.StLinkUtilGdbServerProvider.Host">localhost</value>
+   <value type="int" key="BareMetal.StLinkUtilGdbServerProvider.Port">4242</value>
+   <value type="bool" key="BareMetal.StLinkUtilGdbServerProvider.ResetBoard">true</value>
+   <value type="int" key="BareMetal.StLinkUtilGdbServerProvider.TransportLayer">2</value>
+   <value type="int" key="BareMetal.StLinkUtilGdbServerProvider.VerboseLevel">4</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>GdbServerProvider.1</variable>
+  <valuemap type="QVariantMap">
+   <value type="QString" key="BareMetal.GdbServerProvider.DisplayName">OpenOCD_CM4</value>
+   <value type="QString" key="BareMetal.GdbServerProvider.Id">BareMetal.GdbServerProvider.OpenOcd:{f6ade83b-20fc-4dc0-9cbf-3b88534b153c}</value>
+   <value type="QString" key="BareMetal.GdbServerProvider.InitCommands">set remote hardware-breakpoint-limit 6
+set remote hardware-watchpoint-limit 4
+monitor reset halt
+
+load %{CurrentProject:BuildPath}/cm4/c15_lpc_m4
+add-symbol-file %{CurrentProject:BuildPath}/cm4/c15_lpc_m4 0x1a000000
+
+monitor reset halt</value>
+   <value type="int" key="BareMetal.GdbServerProvider.Mode">0</value>
+   <value type="QString" key="BareMetal.GdbServerProvider.ResetCommands">monitor reset halt
+</value>
+   <value type="QString" key="BareMetal.OpenOcdGdbServerProvider.AdditionalArguments"></value>
+   <value type="QString" key="BareMetal.OpenOcdGdbServerProvider.ConfigurationPath">/home/paso/development/tools/nllpc/openocd/nonlinear-lpc.cfg</value>
+   <value type="QString" key="BareMetal.OpenOcdGdbServerProvider.ExecutableFile">/home/paso/development/tools/bin/openocd</value>
+   <value type="QString" key="BareMetal.OpenOcdGdbServerProvider.Host">localhost</value>
+   <value type="int" key="BareMetal.OpenOcdGdbServerProvider.Port">3333</value>
+   <value type="QString" key="BareMetal.OpenOcdGdbServerProvider.RootScriptsDir"></value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>GdbServerProvider.2</variable>
+  <valuemap type="QVariantMap">
+   <value type="QString" key="BareMetal.GdbServerProvider.DisplayName">OpenOCD_CM0</value>
+   <value type="QString" key="BareMetal.GdbServerProvider.Id">BareMetal.GdbServerProvider.OpenOcd:{e7c66e2a-489f-4d5b-8183-b17b3d5e94b9}</value>
+   <value type="QString" key="BareMetal.GdbServerProvider.InitCommands">set remote hardware-breakpoint-limit 6
+set remote hardware-watchpoint-limit 4
+monitor reset halt
+
+load %{CurrentProject:BuildPath}/cm0/c15_lpc_m0
+add-symbol-file %{CurrentProject:BuildPath}/cm0/c15_lpc_m0 0x1b000000
+
+monitor reset halt</value>
+   <value type="int" key="BareMetal.GdbServerProvider.Mode">0</value>
+   <value type="QString" key="BareMetal.GdbServerProvider.ResetCommands">monitor reset halt
+</value>
+   <value type="QString" key="BareMetal.OpenOcdGdbServerProvider.AdditionalArguments"></value>
+   <value type="QString" key="BareMetal.OpenOcdGdbServerProvider.ConfigurationPath">/home/paso/development/tools/nllpc/openocd/nonlinear-lpc.cfg</value>
+   <value type="QString" key="BareMetal.OpenOcdGdbServerProvider.ExecutableFile">/home/paso/development/tools/bin/openocd</value>
+   <value type="QString" key="BareMetal.OpenOcdGdbServerProvider.Host">localhost</value>
+   <value type="int" key="BareMetal.OpenOcdGdbServerProvider.Port">3334</value>
+   <value type="QString" key="BareMetal.OpenOcdGdbServerProvider.RootScriptsDir"></value>
+  </valuemap>
+ </data>
+ <data>
   <variable>GdbServerProvider.Count</variable>
-  <value type="int">0</value>
+  <value type="int">3</value>
  </data>
  <data>
   <variable>Version</variable>

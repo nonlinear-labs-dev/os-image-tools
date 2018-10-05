@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorDebuggers>
-<!-- Written by QtCreator 4.7.1, 2018-10-04T15:57:44. -->
+<!-- Written by QtCreator 4.7.1, 2018-10-05T10:59:13. -->
 <qtcreator>
  <data>
   <variable>DebuggerItem.0</variable>
@@ -13,7 +13,7 @@
    <value type="QString" key="Binary">/usr/bin/gdb</value>
    <value type="QString" key="DisplayName">System GDB at /usr/bin/gdb</value>
    <value type="int" key="EngineType">1</value>
-   <value type="QString" key="Id">{c933bfab-f9a5-4bee-b834-e27b37650426}</value>
+   <value type="QString" key="Id">{31308419-8bc3-4337-9e2a-987ae24b5677}</value>
    <value type="QDateTime" key="LastModified">2018-08-04T00:30:18.000</value>
    <value type="QString" key="Version">8.1.1</value>
    <value type="QString" key="WorkingDirectory"></value>
@@ -21,6 +21,40 @@
  </data>
  <data>
   <variable>DebuggerItem.1</variable>
+  <valuemap type="QVariantMap">
+   <valuelist type="QVariantList" key="Abis">
+    <value type="QString">arm-unknown-unknown-unknown-32bit</value>
+   </valuelist>
+   <value type="bool" key="AutoDetected">false</value>
+   <value type="QString" key="AutoDetectionSource"></value>
+   <value type="QString" key="Binary">/home/paso/development/gdb/src/bin/arm-none-eabi-gdb</value>
+   <value type="QString" key="DisplayName">STM32</value>
+   <value type="int" key="EngineType">1</value>
+   <value type="QString" key="Id">{eef5104c-4583-435f-b1ae-68e1f1f2ec5f}</value>
+   <value type="QDateTime" key="LastModified"></value>
+   <value type="QString" key="Version">7.8.2</value>
+   <value type="QString" key="WorkingDirectory"></value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>DebuggerItem.2</variable>
+  <valuemap type="QVariantMap">
+   <valuelist type="QVariantList" key="Abis">
+    <value type="QString">arm-unknown-unknown-unknown-32bit</value>
+   </valuelist>
+   <value type="bool" key="AutoDetected">false</value>
+   <value type="QString" key="AutoDetectionSource"></value>
+   <value type="QString" key="Binary">/usr/bin/arm-none-eabi-gdb</value>
+   <value type="QString" key="DisplayName">Fedora ARM gdb</value>
+   <value type="int" key="EngineType">1</value>
+   <value type="QString" key="Id">{c5909531-f6ea-4ecd-a94b-df593a8d794c}</value>
+   <value type="QDateTime" key="LastModified"></value>
+   <value type="QString" key="Version">7.6.2</value>
+   <value type="QString" key="WorkingDirectory"></value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>DebuggerItem.3</variable>
   <valuemap type="QVariantMap">
    <valuelist type="QVariantList" key="Abis">
     <value type="QString">x86-linux-generic-elf-64bit</value>
@@ -38,7 +72,7 @@
  </data>
  <data>
   <variable>DebuggerItem.Count</variable>
-  <value type="int">2</value>
+  <value type="int">4</value>
  </data>
  <data>
   <variable>Version</variable>

@@ -1,18 +1,15 @@
 #!/bin/bash
 
 MOUNT_POINT_ROOT=/tmp/root
-MOUNT_POINT_BOOT=/tmp/boot
 IMAGE_VERSION_INFO_FILE=${MOUNT_POINT_ROOT}/etc/nonlinear_release
 DEVICE=""
-DEVICE_P1=""
-DEVICE_P2=""
+DEVICE_P=""
 DOWNLOAD_LOCATION="http://home.nonlinear-labs.de/images/bbb"
 DOWNLOAD_DIR="/tmp/bbb"
 
 # Parameters
 OPT_RECREATE_PARTITIONS=false
 OPT_COPY_ROOTFS=false
-OPT_COPY_BOOTFS=false
 OPT_DEBUG=0
 OPT_RELEASE_NUMBER=latest
 
@@ -39,28 +36,13 @@ function write_uenv_file {
 	printf "OK\n"
 }
 
-function mount_boot {
-	printf "Mounting boot partition at ${MOUNT_POINT_BOOT}\n"
-	mkdir -p ${MOUNT_POINT_BOOT}
-	if ! sudo mount ${DEVICE_P1} ${MOUNT_POINT_BOOT}; then
-		printf "Can not mount ${DEVICE_P1}. Aborting...\n"
-		exit -1
-	fi
-}
-
 function mount_root {
 	printf "Mounting root partition at ${MOUNT_POINT_ROOT}\n"
 	mkdir -p ${MOUNT_POINT_ROOT}
-	if ! sudo mount ${DEVICE_P2} ${MOUNT_POINT_ROOT}; then
-		printf "Can not mount ${DEVICE_P2}. Aborting...\n"
+	if ! sudo mount ${DEVICE_P} ${MOUNT_POINT_ROOT}; then
+		printf "Can not mount ${DEVICE_P}. Aborting...\n"
 		exit -1
 	fi
-}
-
-function unmount_boot {
-	printf "Unmounting boot..."
-	sudo umount ${MOUNT_POINT_BOOT}
-	printf "OK\n"
 }
 
 function unmount_root {
@@ -82,30 +64,17 @@ function sync_rootfs {
 	sync
 }
 
-function sync_bootfs {
-	printf "Syncing bootfs...\n"
-	if ! sudo cp "${DOWNLOAD_DIR}/u-boot.img" ${MOUNT_POINT_BOOT}; then
-		printf "Can not copy u-boot.img. Aborting...\n"
-		exit -1
-	fi
-	if ! sudo cp "${DOWNLOAD_DIR}/MLO" ${MOUNT_POINT_BOOT}; then
-		printf "Can not copy MLO. Aborting...\n"
-		exit -1
-	fi
-}
-
 function rewrite_partitions {
 	printf "Flushing old partition table..."
 	sudo dd if=/dev/zero of=${DEVICE} bs=1024 count=1024 2>/dev/null 1>/dev/null && sync
 	printf "OK\n"
 
 	printf "Creating new partition table..."
-	echo -e ',50M,c,*\n,\n' | sudo sfdisk ${DEVICE} 2>/dev/null 1>/dev/null && sync
+	echo -e ",,L,\n" | sudo sfdisk ${DEVICE} 2>/dev/null 1>/dev/null && sync
 	printf "OK\n"
 
 	printf "Creating Partitions..."
-	sudo mkfs.vfat -n BOOT ${DEVICE_P1} 1>/dev/null 2>/dev/null
-	sudo mkfs.ext3 ${DEVICE_P2} 1>/dev/null 2>/dev/null
+	sudo mkfs.ext3 ${DEVICE_P} 1>/dev/null 2>/dev/null
 	printf "OK\n"
 
 	printf "Rereading partition table..."
@@ -151,7 +120,6 @@ function usage {
 	printf "  options:\n"
 	printf "  -p|--partition           Recreate partitions\n"
 	printf "  -r|--root                Update files on root partition\n"
-	printf "  -b|--boot                Update files on boot partition\n"
 	printf "  -n|--release-number <nr> Specify release number <nr> (e.g. 11)\n"
 	printf "  -v|--verbose             Be more verbose (even more if used twice)\n"
 	printf "\n"
@@ -202,9 +170,6 @@ while [[ $# -gt 1 ]]; do
 			-r|--root)
 				OPT_COPY_ROOTFS=true
 			;;
-			-b|--boot)
-				OPT_COPY_BOOTFS=true
-			;;
 			-v|--verbose)
 				OPT_DEBUG=$((OPT_DEBUG+1))
 			;;
@@ -219,12 +184,10 @@ while [[ $# -gt 1 ]]; do
 done
 
 if [ -b "${DEVICE}" ]; then
-	DEVICE_P1=$(get_partition ${DEVICE} 1)
-	DEVICE_P2=$(get_partition ${DEVICE} 2)
+	DEVICE_P=$(get_partition ${DEVICE} 1)
 	debug "Working on:"
 	debug "  ${DEVICE}"
-	debug "    ${DEVICE_P1}  boot"
-	debug "    ${DEVICE_P2}  rootfs"
+	debug "    ${DEVICE_P}  rootfs"
 	debug ""
 else
 	printf "Device \"$1\" does not seem to be a block device!\n"
@@ -235,8 +198,6 @@ debugdebug "OPT_WIFI_NAME            = $OPT_WIFI_NAME"
 debugdebug "OPT_RELEASE_NOTE         = $OPT_RELEASE_NOTE"
 debugdebug "OPT_RECREATE_PARTITIONS  = $OPT_RECREATE_PARTITIONS"
 debugdebug "OPT_COPY_ROOTFS          = $OPT_COPY_ROOTFS"
-debugdebug "OPT_COPY_BOOTFS          = $OPT_COPY_BOOTFS"
-debugdebug "OPT_CREATE_INSTALL_MEDIA = $OPT_CREATE_INSTALL_MEDIA"
 debugdebug "OPT_DEBUG                = $OPT_DEBUG"
 debugdebug "OPT_RELEASE_NUMBER       = $OPT_RELEASE_NUMBER"
 debugdebug "DEVICE                   = $DEVICE"
@@ -256,20 +217,13 @@ if [ ${OPT_RECREATE_PARTITIONS} = true ]; then
 fi
 
 mount_root
-mount_boot
 
 if [ ${OPT_COPY_ROOTFS} = true ]; then
 	sync_rootfs && sync
 fi
 
-if [ ${OPT_COPY_BOOTFS} = true ]; then
-	printf "Boot partition updates currently disabled. We might not even need this anymore...\n"
-#	sync_bootfs && write_uenv_file && sync
-fi
-
 printf "Cleaning up:\n"
 
-unmount_boot
 unmount_root
 
 printf "Done.\n"
